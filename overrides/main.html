@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{#-
+  Advertise the AI Catalog via the `ai-catalog` link relation so agents and
+  crawlers can discover it without prior knowledge of its location.
+  See: https://agent-card.github.io/ai-catalog/#link-relation-discovery
+-#}
+{% block extrahead %}
+  <link rel="ai-catalog" href="/.well-known/ai-catalog.json" type="application/ai-catalog+json">
+{% endblock %}

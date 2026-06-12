@@ -1,0 +1,109 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Search 4 Agents",
+    "identifier": "did:web:search4agents.io",
+    "documentationUrl": "https://search4agents.io/"
+  },
+  "entries": [
+    {
+      "identifier": "urn:search4agents:a2a:research-assistant",
+      "displayName": "Research Assistant",
+      "mediaType": "application/a2a-agent-card+json",
+      "url": "https://agents.example.com/research-assistant",
+      "description": "Plans and runs multi-step web research and returns cited summaries.",
+      "version": "1.2.0",
+      "tags": ["agent", "a2a", "research"]
+    },
+    {
+      "identifier": "urn:search4agents:a2a:travel-booking",
+      "displayName": "Travel Booking Agent",
+      "mediaType": "application/a2a-agent-card+json",
+      "url": "https://agents.example.com/travel-booking",
+      "description": "Searches flights and hotels and completes bookings on the user's behalf.",
+      "version": "2.0.1",
+      "tags": ["agent", "a2a", "travel"]
+    },
+    {
+      "identifier": "urn:search4agents:a2a:code-review",
+      "displayName": "Code Review Agent",
+      "mediaType": "application/a2a-agent-card+json",
+      "url": "https://agents.example.com/code-review",
+      "description": "Reviews pull requests and suggests fixes for bugs and style issues.",
+      "version": "0.9.0",
+      "tags": ["agent", "a2a", "engineering"]
+    },
+    {
+      "identifier": "urn:search4agents:mcp:weather",
+      "displayName": "Weather MCP Server",
+      "mediaType": "application/mcp-server-card+json",
+      "url": "https://api.example.com/weather/.well-known/mcp/server-card.json",
+      "description": "MCP tools for current conditions and forecasts by location.",
+      "version": "1.0.0",
+      "tags": ["mcp", "tools", "weather"]
+    },
+    {
+      "identifier": "urn:search4agents:mcp:github",
+      "displayName": "GitHub MCP Server",
+      "mediaType": "application/mcp-server-card+json",
+      "url": "https://api.example.com/github/.well-known/mcp/server-card.json",
+      "description": "MCP tools to read repositories, issues, and pull requests.",
+      "version": "1.4.0",
+      "tags": ["mcp", "tools", "github"]
+    },
+    {
+      "identifier": "urn:search4agents:mcp:database",
+      "displayName": "Database Query MCP Server",
+      "mediaType": "application/mcp-server-card+json",
+      "url": "https://api.example.com/database/.well-known/mcp/server-card.json",
+      "description": "MCP tools to run read-only SQL queries against approved datasets.",
+      "version": "0.5.2",
+      "tags": ["mcp", "tools", "database"]
+    },
+    {
+      "identifier": "urn:search4agents:skill:code-review",
+      "displayName": "Code Review Skill",
+      "mediaType": "application/agentskill+zip",
+      "url": "https://skills.example.com/code-review/skill.zip",
+      "description": "A reusable skill that teaches an agent how to review code changes.",
+      "version": "1.1.0",
+      "tags": ["skill", "engineering"]
+    },
+    {
+      "identifier": "urn:search4agents:skill:pdf-summarizer",
+      "displayName": "PDF Summarizer Skill",
+      "mediaType": "application/agentskill+zip",
+      "url": "https://skills.example.com/pdf-summarizer/skill.zip",
+      "description": "Extracts text from PDFs and produces structured summaries.",
+      "version": "1.0.0",
+      "tags": ["skill", "documents"]
+    },
+    {
+      "identifier": "urn:search4agents:skill:data-cleaning",
+      "displayName": "Data Cleaning Skill",
+      "mediaType": "application/agentskill+zip",
+      "url": "https://skills.example.com/data-cleaning/skill.zip",
+      "description": "Normalizes, deduplicates, and validates tabular datasets.",
+      "version": "0.3.0",
+      "tags": ["skill", "data"]
+    },
+    {
+      "identifier": "urn:search4agents:skill:rubber-duck-debugger",
+      "displayName": "Rubber Duck Debugger",
+      "mediaType": "application/agentskill+zip",
+      "url": "https://search4agents.io/skills/rubber-duck-debugger/skill.zip",
+      "description": "A patient (slightly smug) rubber duck that helps you debug by making you explain your code line by line until you spot the bug yourself. Quack.",
+      "version": "1.0.0",
+      "tags": ["skill", "fun", "debugging", "demo"]
+    },
+    {
+      "identifier": "urn:search4agents:skill:dad-joke-generator",
+      "displayName": "Dad Joke Generator",
+      "mediaType": "application/agentskill+zip",
+      "url": "https://search4agents.io/skills/dad-joke-generator/skill.zip",
+      "description": "Generates groan-worthy, family-friendly dad jokes and puns on any topic. Side effects may include eye-rolling.",
+      "version": "1.0.0",
+      "tags": ["skill", "fun", "humor", "demo"]
+    }
+  ]
+}

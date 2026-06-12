@@ -1,0 +1,78 @@
+site_name: Search 4 Agents
+site_description: >-
+  Search 4 Agents is an education and information site about Agentic Resource
+  Discovery — how to publish, find, and verify agents, MCP servers, and skills
+  on the open web.
+site_author: Search 4 Agents
+site_url: https://search4agents.io/
+
+# Repository (used for the "edit" / "view source" buttons and feature-request PRs)
+repo_name: Search4Agents/Search4Agents
+repo_url: https://github.com/Search4Agents/Search4Agents
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2026 Search 4 Agents — Licensed under Apache 2.0
+
+# MkDocs ignores dotfiles/dot-folders by default. Re-include the well-known
+# catalog so it is published at /.well-known/ai-catalog.json per the AI Catalog
+# spec (https://agent-card.github.io/ai-catalog/#well-known-uri).
+# .nojekyll keeps GitHub Pages from stripping the dot-folder on deploy.
+exclude_docs: |
+  !.well-known/
+  !.nojekyll
+
+theme:
+  name: material
+  custom_dir: overrides
+  icon:
+    logo: material/compass-outline
+    repo: fontawesome/brands/github
+  palette:
+    scheme: default
+    primary: white
+    accent: black
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+    - search.suggest
+    - search.highlight
+    - toc.follow
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Why ARD?: why-ard.md
+  - Catalog: catalog.md
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Search4Agents/Search4Agents
+      name: Search 4 Agents on GitHub

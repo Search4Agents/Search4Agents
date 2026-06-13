@@ -4,7 +4,7 @@ site_description: >-
   Discovery — how to publish, find, and verify agents, MCP servers, and skills
   on the open web.
 site_author: Search 4 Agents
-site_url: https://search4agents.io/
+site_url: https://search4agents.github.io/
 
 # Repository (used for the "edit" / "view source" buttons and feature-request PRs)
 repo_name: Search4Agents/Search4Agents

@@ -2,8 +2,8 @@
   "specVersion": "1.0",
   "host": {
     "displayName": "Search 4 Agents",
-    "identifier": "did:web:search4agents.io",
-    "documentationUrl": "https://search4agents.io/"
+    "identifier": "did:web:search4agents.github.io",
+    "documentationUrl": "https://search4agents.github.io/"
   },
   "entries": [
     {
@@ -91,7 +91,7 @@
       "identifier": "urn:search4agents:skill:rubber-duck-debugger",
       "displayName": "Rubber Duck Debugger",
       "mediaType": "application/agentskill+zip",
-      "url": "https://search4agents.io/skills/rubber-duck-debugger/skill.zip",
+      "url": "https://search4agents.github.io/skills/rubber-duck-debugger/skill.zip",
       "description": "A patient (slightly smug) rubber duck that helps you debug by making you explain your code line by line until you spot the bug yourself. Quack.",
       "version": "1.0.0",
       "tags": ["skill", "fun", "debugging", "demo"]
@@ -100,7 +100,7 @@
       "identifier": "urn:search4agents:skill:dad-joke-generator",
       "displayName": "Dad Joke Generator",
       "mediaType": "application/agentskill+zip",
-      "url": "https://search4agents.io/skills/dad-joke-generator/skill.zip",
+      "url": "https://search4agents.github.io/skills/dad-joke-generator/skill.zip",
       "description": "Generates groan-worthy, family-friendly dad jokes and puns on any topic. Side effects may include eye-rolling.",
       "version": "1.0.0",
       "tags": ["skill", "fun", "humor", "demo"]

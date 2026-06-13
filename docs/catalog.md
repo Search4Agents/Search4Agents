@@ -14,7 +14,7 @@ For demos, this site hosts a working catalog at the spec's well-known path —
 served over HTTPS, exactly where agents and registries look for it:
 
 ```
-https://search4agents.io/.well-known/ai-catalog.json
+https://search4agents.github.io/.well-known/ai-catalog.json
 ```
 
 [:material-file-code: View the demo catalog](.well-known/ai-catalog.json){ .md-button .md-button--primary }
@@ -88,7 +88,7 @@ Media types identify each resource type:
       "identifier": "urn:search4agents:skill:rubber-duck-debugger",
       "displayName": "Rubber Duck Debugger",
       "mediaType": "application/agentskill+zip",
-      "url": "https://search4agents.io/skills/rubber-duck-debugger/skill.zip",
+      "url": "https://search4agents.github.io/skills/rubber-duck-debugger/skill.zip",
       "description": "A patient (slightly smug) rubber duck that helps you debug by making you explain your code line by line until you spot the bug yourself. Quack.",
       "version": "1.0.0",
       "tags": ["skill", "fun", "debugging", "demo"]

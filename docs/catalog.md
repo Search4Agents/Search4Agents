@@ -25,6 +25,132 @@ https://search4agents.github.io/.well-known/ai-catalog.json
     its HTML `<head>`, so crawlers and agents can discover it automatically.
     Host yours the same way: `https://yourdomain.com/.well-known/ai-catalog.json`
 
+## Query the catalog from your terminal
+
+Because a catalog is just a JSON file served over HTTPS, **any HTTP client can
+query it** — no SDK required. The examples below use `curl` (with optional
+[`jq`](https://jqlang.github.io/jq/) for filtering); a zero-dependency Python
+version (standard library only) is in the second tab.
+
+### 1. Fetch the whole catalog
+
+=== "curl"
+
+    ```bash
+    curl -fsSL https://search4agents.github.io/.well-known/ai-catalog.json
+    ```
+
+=== "Python"
+
+    ```python
+    import json
+    import urllib.request
+
+    CATALOG = "https://search4agents.github.io/.well-known/ai-catalog.json"
+
+    with urllib.request.urlopen(CATALOG) as resp:
+        catalog = json.load(resp)
+
+    print(json.dumps(catalog, indent=2))
+    ```
+
+### 2. List the skills that have been shared
+
+Filter the `entries` array by the skill media type
+(`application/agentskill+zip`) to see every shared skill and its download URL:
+
+=== "curl"
+
+    ```bash
+    curl -fsSL https://search4agents.github.io/.well-known/ai-catalog.json \
+      | jq -r '.entries[]
+               | select(.mediaType == "application/agentskill+zip")
+               | "\(.displayName)\t\(.url)"'
+    ```
+
+=== "Python"
+
+    ```python
+    import json
+    import urllib.request
+
+    CATALOG = "https://search4agents.github.io/.well-known/ai-catalog.json"
+    SKILL = "application/agentskill+zip"
+
+    with urllib.request.urlopen(CATALOG) as resp:
+        catalog = json.load(resp)
+
+    skills = [e for e in catalog["entries"] if e.get("mediaType") == SKILL]
+    for s in skills:
+        print(f'{s["displayName"]}\t{s["url"]}')
+    ```
+
+!!! tip "Filter by tag instead"
+
+    Swap the selector to discover by keyword — e.g. every entry tagged `fun`:
+    `jq -r '.entries[] | select(.tags | index("fun")) | .displayName'`
+
+### 3. Download a shared skill
+
+The two demo skills are real `application/agentskill+zip` artifacts, so you can
+download and unzip one directly:
+
+=== "curl"
+
+    ```bash
+    # Download the Rubber Duck Debugger skill, then peek inside
+    curl -fL -o rubber-duck-debugger.zip \
+      https://search4agents.github.io/skills/rubber-duck-debugger/skill.zip
+    unzip -p rubber-duck-debugger.zip SKILL.md
+    ```
+
+=== "Python"
+
+    ```python
+    import urllib.request
+    import zipfile
+
+    URL = "https://search4agents.github.io/skills/rubber-duck-debugger/skill.zip"
+
+    urllib.request.urlretrieve(URL, "rubber-duck-debugger.zip")
+    with zipfile.ZipFile("rubber-duck-debugger.zip") as zf:
+        print(zf.read("SKILL.md").decode())
+    ```
+
+### 4. Discover, then download — in one pass
+
+Real agents do both steps together: read the catalog, pick a resource by intent,
+then fetch it. Here we grab the first skill's `skill.zip` straight from the
+catalog:
+
+=== "curl"
+
+    ```bash
+    SKILL_URL=$(curl -fsSL https://search4agents.github.io/.well-known/ai-catalog.json \
+      | jq -r '[.entries[]
+               | select(.mediaType == "application/agentskill+zip")][0].url')
+    curl -fL -O "$SKILL_URL"
+    ```
+
+=== "Python"
+
+    ```python
+    import urllib.request
+    import json
+
+    CATALOG = "https://search4agents.github.io/.well-known/ai-catalog.json"
+    SKILL = "application/agentskill+zip"
+
+    with urllib.request.urlopen(CATALOG) as resp:
+        catalog = json.load(resp)
+
+    skill_url = next(
+        e["url"] for e in catalog["entries"] if e.get("mediaType") == SKILL
+    )
+    urllib.request.urlretrieve(skill_url, skill_url.rsplit("/", 1)[-1])
+    print(f"downloaded {skill_url}")
+    ```
+
 ## Anatomy of an entry
 
 Every entry needs four things, plus a few optional but recommended fields:

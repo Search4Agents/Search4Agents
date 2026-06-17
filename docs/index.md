@@ -49,6 +49,27 @@ had: **self-publishing at a well-known location.**
 
 See the [Catalog](catalog.md) page for a simple, working example.
 
+## Try it in your terminal
+
+This site hosts a live catalog. The fastest way to see Agentic Resource
+Discovery in action is to fetch it with `curl`:
+
+```bash
+# Fetch this site's live catalog from its well-known path
+curl -fsSL https://search4agents.github.io/.well-known/ai-catalog.json
+```
+
+Want to filter for just the downloadable skills, or grab one of the demo skills?
+The [Catalog](catalog.md#query-the-catalog-from-your-terminal) page has
+copy-paste `curl` and Python recipes for querying entries and downloading a
+`skill.zip`.
+
+## Share your own service
+
+Publish a catalog on your own domain, then **list your repository in our
+federated registry** so other agents can discover it. See
+[Register a service](register.md) for the step-by-step pull-request plan.
+
 ## Learn more
 
 - AI Catalog specification: <https://agent-card.github.io/ai-catalog/>
@@ -63,7 +84,7 @@ The content and examples on this site are licensed under the
 Have an idea or want something added? **Open a Pull Request** in our GitHub
 repository:
 
-[Open a Pull Request :material-source-pull:](https://github.com/Search4Agents/Search4Agents/pulls){ .md-button .md-button--primary }
+[Open a Pull Request :material-source-pull:](https://github.com/Search4Agents/Search4Agents.github.io/pulls){ .md-button .md-button--primary }
 
 For substantial changes, please open a PR describing the change so we can discuss
 it. (We track feature requests through PRs rather than a separate form.)

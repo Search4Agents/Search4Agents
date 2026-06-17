@@ -7,8 +7,8 @@ site_author: Search 4 Agents
 site_url: https://search4agents.github.io
 
 # Repository (used for the "edit" / "view source" buttons and feature-request PRs)
-repo_name: Search4Agents
-repo_url: https://github.com/Search4Agents/Search4Agents
+repo_name: Search4Agents.github.io
+repo_url: https://github.com/Search4Agents/Search4Agents.github.io
 edit_uri: edit/main/docs/
 
 copyright: Copyright &copy; 2026 Search 4 Agents — Licensed under Apache 2.0
@@ -50,6 +50,8 @@ nav:
   - Home: index.md
   - Why ARD?: why-ard.md
   - Catalog: catalog.md
+  - Register a service: register.md
+  - Known catalogs: registry.md
 
 markdown_extensions:
   - abbr
@@ -67,12 +69,16 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Search4Agents/Search4Agents
+      link: https://github.com/Search4Agents/Search4Agents.github.io
       name: Search 4 Agents on GitHub

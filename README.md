@@ -39,9 +39,20 @@ python3 skills/build_skills.py
   `gh-pages` branch.
 - **Automated:** pushing to `main` runs `.github/workflows/docs.yml`, which
   builds (`--strict`) and deploys to GitHub Pages.
+- **Scheduled:** the same workflow also rebuilds and redeploys **every morning at
+  9:00 a.m. America/Los_Angeles**. GitHub cron is UTC and ignores daylight
+  saving, so it triggers at 16:00 and 17:00 UTC and a `gate` job runs the build
+  only when it is actually 9am Pacific.
 
 > Pick a single GitHub Pages source to match your method: *Deploy from a branch
 > → `gh-pages`* for the manual route, or *GitHub Actions* for the automated one.
+
+## Register / contribute a catalog
+
+Search 4 Agents is a **federated registry**. To list your own agentic services,
+publish an `ai-catalog.json` on your domain and open a pull request adding a row
+to [`docs/registry.md`](docs/registry.md). The full step-by-step plan and
+acceptance checklist live in [`docs/register.md`](docs/register.md).
 
 ## License
 
